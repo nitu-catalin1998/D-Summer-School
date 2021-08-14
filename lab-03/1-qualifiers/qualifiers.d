@@ -10,7 +10,7 @@ struct B
 {
     int[] c;
 }
-void munB(B) {}
+void munB(const B) {}
 void cunB(const B) {}
 void iunB(immutable B) {}
 
@@ -18,7 +18,7 @@ class C
 {
     int[10] a;
 }
-void munC(C) {}
+void munC(const C) {}
 void cunC(const C) {}
 void iunC(immutable C) {}
 
@@ -26,7 +26,7 @@ class D
 {
     int[] a;
 }
-void munD(D) {}
+void munD(const D) {}
 void cunD(const D) {}
 void iunD(immutable D) {}
 
@@ -45,8 +45,8 @@ void main()
     /******************************************
      * value type with indirections must obey qualifier conversion rules
      */
-    B b;
-    const B cb;
+    immutable B b;
+    immutable B cb;
     immutable B ib;
     munB(b);
     munB(cb);
@@ -63,8 +63,8 @@ void main()
     /********************************************
      * reference types must obey qualifier conversion rules
      */
-    C c;
-    const C cc;
+    immutable C c;
+    immutable C cc;
     immutable C ic;
     munC(c);
     munC(cc);
@@ -81,8 +81,8 @@ void main()
     /*******************************************
      * reference types must obey qualifier conversion rules
      */
-    D d;
-    const D cd;
+    immutable D d;
+    immutable D cd;
     immutable D id;
     munD(d);
     munD(cd);

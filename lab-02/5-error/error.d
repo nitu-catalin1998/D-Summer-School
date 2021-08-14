@@ -1,6 +1,6 @@
 T fun(T)(int a, T b)
 {
-    static if(is(typeof(A) : int))
+    static if(is(typeof(a) : int))
         return b;
     else
         return a;

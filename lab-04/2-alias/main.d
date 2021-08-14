@@ -8,5 +8,6 @@ void fun(int a)
 void main()
 {
     import func;
+    alias fun = func.fun;
     fun();
 }

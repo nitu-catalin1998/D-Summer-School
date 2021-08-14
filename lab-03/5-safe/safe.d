@@ -7,13 +7,13 @@ void gun(VeryBigStruct* c) @safe
     // do whatever
 }
 
-void func(VeryBigStruct a) @safe
+void func(VeryBigStruct a) @trusted
 {
     gun(&a);
     writeln((&a.a)[2]);
 }
 
-void main()
+void main() @safe
 {
     func(VeryBigStruct());
 }
